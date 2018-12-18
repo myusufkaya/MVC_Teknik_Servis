@@ -1,0 +1,59 @@
+﻿@model TeknikServis.Models.Ariza
+@if (ViewBag.Sonuc != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h5><i class="icon fa fa-check"></i> Tebrikler!</h5>
+        @ViewBag.Sonuc
+    </div>
+}
+
+
+<div class="card card-success">
+    <div class="card-header">
+        <h3 class="card-title">Kullanıcı Ekle</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    @using (Html.BeginForm())
+    {
+        <input type="hidden" name="Ariza_ID" value="@Model.Ariza_ID" />
+
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tip_ID</label>
+                <input type="text" class="form-control" name="Tip_ID" placeholder="Tip_ID giriniz" value="@Model.Tip_ID">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tarih</label>
+                <input type="text" class="form-control" name="Tarih" placeholder="Tarih giriniz" value="@Model.Tarih">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Müşteri ID</label>
+                <input type="text" class="form-control" name="Mus_ID" placeholder="Müşteri ID giriniz" value="@Model.Mus_ID">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ürün Detay</label>
+                <input type="text" class="form-control" name="Detay" placeholder="Ürün Detay giriniz" value="@Model.Detay">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ürün Durum</label>
+                <input type="text" class="form-control" name="Durum" placeholder="Ürün Durumunu giriniz" value="@Model.Durum">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ürün Adı</label>
+                <input type="text" class="form-control" name="Urun_Ad" placeholder="Ürün Adını giriniz" value="@Model.Urun_Ad">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Urun Kategori</label>
+                <input type="text" class="form-control" name="Urun_Kategori" placeholder="Ürün Kategori giriniz." value="@Model.Urun_Kategori">
+            </div>
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success">Kaydet</button>
+        </div>
+    }
+
+</div>

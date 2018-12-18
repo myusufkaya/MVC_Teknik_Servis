@@ -1,0 +1,57 @@
+﻿@if (ViewBag.Sonuc != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h5><i class="icon fa fa-check"></i> Tebrikler!</h5>
+        @ViewBag.Sonuc
+    </div>
+}
+
+
+<div class="card card-success">
+    <div class="card-header">
+        <h3 class="card-title">Ariza Ekle</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    @using (Html.BeginForm())
+    {
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Arıza Tipi</label>
+                <input type="text" class="form-control" name="Tip_ID" placeholder="Yazılım(1) / Donanım(2)">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Tarih</label>
+                <input type="text" class="form-control" name="Tarih" placeholder="Tarih giriniz.">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Müşteri ID</label>
+                <input type="text" class="form-control" name="Mus_ID" placeholder="Müşteri ID giriniz.">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Detay</label>
+                <input type="text" class="form-control" name="Detay" placeholder="Arıza Detayı giriniz.">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Durum</label>
+                <input type="text" class="form-control" name="Durum" placeholder="Ürün Durumu giriniz.">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ürün Adı</label>
+                <input type="text" class="form-control" name="Urun_Ad" placeholder="Ürün Adı giriniz.">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ürün Kategori</label>
+                <input type="text" class="form-control" name="Urun_Kategori" placeholder="Kategori giriniz">
+            </div>
+
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success">Urun Ekle</button>
+        </div>
+    }
+</div>
+

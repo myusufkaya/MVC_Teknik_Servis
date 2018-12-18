@@ -1,0 +1,40 @@
+﻿@model List<TeknikServis.Models.Malzeme>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Malzemeler</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-condensed">
+            <tbody>
+                <tr>
+                    <th>Malzeme No</th>
+                    <th>Malzeme Adı</th>
+                    <th>Adet</th>
+                    <th>Fiyat</th>
+                </tr>
+                @foreach (var malzeme in Model)
+                {
+                    <tr>
+                        <td>@malzeme.Malzeme_ID</td>
+                        <td>@malzeme.Malzeme_Ad</td>
+                        <td>@malzeme.Adet</td>
+                        <td>@malzeme.Fiyat</td>
+                        <td>
+                            <a href="/Home/MalzemeDuzenle/@malzeme.Malzeme_ID" class="btn btn-sm btn-info" title="Düzenle">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="/Home/MalzemeSil/@malzeme.Malzeme_ID" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğinizden emin misiniz ?')">
+                                <i class="fa fa-remove"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

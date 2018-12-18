@@ -1,0 +1,49 @@
+﻿@model TeknikServis.Models.Tedarik
+@if (ViewBag.Sonuc != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h5><i class="icon fa fa-check"></i> Tebrikler!</h5>
+        @ViewBag.Sonuc
+    </div>
+}
+
+
+<div class="card card-success">
+    <div class="card-header">
+        <h3 class="card-title">Sipariş Ekle</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    @using (Html.BeginForm())
+    {
+        <input type="hidden" name="Tedarik_ID" value="@Model.Tedarik_ID" />
+
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Malzeme No</label>
+                <input type="text" class="form-control" name="Malzeme_ID" placeholder="Malzeme No giriniz" value="@Model.Malzeme_ID">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Sipariş Adet</label>
+                <input type="text" class="form-control" name="Tedarik_Adet" placeholder="Sipariş adet giriniz" value="@Model.Tedarik_Adet">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Sipariş Tarihi</label>
+                <input type="text" class="form-control" name="Siparis_Tarih" placeholder="Sipariş tarihi giriniz" value="@Model.Siparis_Tarih">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Fiyat</label>
+                <input type="text" class="form-control" name="Fiyat" placeholder="Fiyat giriniz" value="@Model.Fiyat">
+            </div>
+            
+
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success">Kaydet</button>
+        </div>
+    }
+
+</div>

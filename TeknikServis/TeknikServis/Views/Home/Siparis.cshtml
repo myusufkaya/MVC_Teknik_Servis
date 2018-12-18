@@ -1,0 +1,43 @@
+﻿@model List<TeknikServis.Models.Tedarik>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Siparişler</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-condensed">
+            <tbody>
+                <tr>
+                    <th>Sipariş No</th>
+                    <th>Ürün Adı</th>
+                    <th>Sipariş Adet</th>
+                    <th>Sipariş Tarihi</th>
+                    <th>Fiyat</th>
+                </tr>
+                @foreach (var tedarik in Model)
+                {
+                    <tr>
+                        <td>@tedarik.Tedarik_ID</td>
+                        <td>@tedarik.Malzeme.Malzeme_Ad</td>
+                        <td>@tedarik.Tedarik_Adet</td>
+                        <td>@tedarik.Siparis_Tarih</td>
+                        <td>@tedarik.Fiyat</td>
+                      
+                        <td>
+                            <a href="/Home/SiparisDuzenle/@tedarik.Tedarik_ID" class="btn btn-sm btn-info" title="Düzenle">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="/Home/SiparisSil/@tedarik.Tedarik_ID" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğinizden emin misiniz ?')">
+                                <i class="fa fa-remove"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

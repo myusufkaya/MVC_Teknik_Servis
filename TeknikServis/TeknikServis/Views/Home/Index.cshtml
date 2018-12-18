@@ -1,0 +1,47 @@
+﻿@model List<TeknikServis.Models.Musteri>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Müşteriler</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-condensed">
+            <tbody>
+                <tr>
+                    <th>Müşteri ID</th>
+                    <th>TC</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Adres</th>
+                    <th>Mail</th>
+                    <th>Telefon</th>
+    
+                </tr>
+                @foreach (var musteri in Model)
+                {
+                    <tr>
+                        <td>@musteri.Mus_ID</td>
+                        <td>@musteri.TC</td>
+                        <td>@musteri.Ad</td>
+                        <td>@musteri.Soyad</td>
+                        <td>@musteri.Adres</td>
+                        <td>@musteri.Mail</td>
+                        <td>@musteri.Telefon</td>
+                        <td>
+                            <a href="/Home/Duzenle/@musteri.Mus_ID" class="btn btn-sm btn-info" title="Düzenle">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="/Home/Sil/@musteri.Mus_ID" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğinizden emin misiniz ?')">
+                                <i class="fa fa-remove"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

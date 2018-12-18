@@ -1,0 +1,53 @@
+﻿@if (ViewBag.Sonuc != null)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h5><i class="icon fa fa-check"></i> Tebrikler!</h5>
+        @ViewBag.Sonuc
+    </div>
+}
+
+
+<div class="card card-success">
+    <div class="card-header">
+        <h3 class="card-title">Musteri Ekle</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    @using (Html.BeginForm())
+    {
+        <div class="card-body">
+            <div class="form-group">
+                <label for="exampleInputEmail1">TC</label>
+                <input type="text" class="form-control" name="TC" placeholder="TC giriniz">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Ad</label>
+                <input type="text" class="form-control" name="Ad" placeholder="Ad giriniz">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Soyad</label>
+                <input type="text" class="form-control" name="Soyad" placeholder="Soyad giriniz">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Adres</label>
+                <input type="text" class="form-control" name="Adres" placeholder="Adres giriniz">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Mail</label>
+                <input type="text" class="form-control" name="Mail" placeholder="Mail giriniz">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefon</label>
+                <input type="text" class="form-control" name="Telefon" placeholder="Telefon giriniz">
+            </div>
+
+        </div>
+        <!-- /.card-body -->
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success">Kaydet</button>
+        </div>
+    }
+
+</div>

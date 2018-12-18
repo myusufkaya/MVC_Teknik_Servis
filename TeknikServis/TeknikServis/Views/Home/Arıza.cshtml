@@ -1,0 +1,65 @@
+﻿@model List<TeknikServis.Models.Ariza>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Arızalar</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table table-condensed">
+            <tbody>
+                <tr>
+                    <th>Arıza No</th>
+                    <th>Arıza Tipi</th>
+                    <th>Tarih</th>
+                    <th>Müşteri Adı</th>
+                    <th>Detay</th>
+                    <th>Durum</th>
+                    <th>Ürün Adı</th>
+                    <th>Kategori</th>
+
+                </tr>
+                @foreach (var ariza in Model)
+                {
+                    <tr>
+                        <td>@ariza.Ariza_ID</td>
+                        <td>@if (ariza.Tip_ID == 1)
+                        {
+                            @:Yazılım
+                        }
+                        else
+                        {
+                        @:Donanım
+                        }
+                        </td>
+                        <td>@ariza.Tarih</td>
+                        <td>@ariza.Musteri.Ad @ariza.Musteri.Soyad</td>
+                        <td>@ariza.Detay</td>
+                        <td>@if (ariza.Durum)
+                        {
+                            @:onarıldı
+                        }
+                        else
+                        {
+                            @:onarılmadı
+                           }
+                        </td>
+                        <td>@ariza.Urun_Ad</td>
+                        <td>@ariza.Urun_Kategori</td>
+                        <td>
+                            <a href="/Home/ArızaDuzenle/@ariza.Ariza_ID" class="btn btn-sm btn-info" title="Düzenle">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a href="/Home/ArızaSil/@ariza.Ariza_ID" class="btn btn-sm btn-danger" onclick="return confirm('Silmek istediğinizden emin misiniz ?')">
+                                <i class="fa fa-remove"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
